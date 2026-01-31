@@ -13,8 +13,8 @@ public class ProductsTest extends BaseTest {
         productsPage.addGoodsToCart("Sauce Labs Onesie");
         productsPage.addGoodsToCart("Sauce Labs Fleece Jacket");
         productsPage.addGoodsToCart("Test.allTheThings() T-Shirt (Red)");
+
         assertEquals(productsPage.chekCounterValue(), "3");
         assertEquals(productsPage.chekCounterColor(), "rgba(226, 35, 26, 1)");
-
-        }
+    }
 }

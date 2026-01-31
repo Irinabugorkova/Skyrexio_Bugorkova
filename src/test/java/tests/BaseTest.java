@@ -20,12 +20,9 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("--guest");
-     //   options.addArguments("--window-size = 1920, 1080");
-      //  options.addArguments("headless"); // прогоняет тест без открытия браузера
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-      //  browser.manage().window().maximize();
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }

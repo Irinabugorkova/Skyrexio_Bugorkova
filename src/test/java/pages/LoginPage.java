@@ -13,17 +13,29 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
     public void open() {
         driver.get(BASE_URL);
     }
+
     public void login(String user, String password) {
-        driver.findElement(LoginInput).sendKeys(user);
-        driver.findElement(PasswordInput).sendKeys(password);
+        fillLoginField(user);
+        fillPasswordField(password);
         driver.findElement(LoginButton).click();
     }
+
+    public void fillLoginField(String user) {
+        driver.findElement(LoginInput).sendKeys(user);
+    }
+
+    public void fillPasswordField(String password) {
+        driver.findElement(PasswordInput).sendKeys(password);
+    }
+
     public boolean isErrorDisplayed() {
         return driver.findElement(errorMsg).isDisplayed();
     }
+
     public String getErrorText() {
         return driver.findElement(errorMsg).getText();
     }

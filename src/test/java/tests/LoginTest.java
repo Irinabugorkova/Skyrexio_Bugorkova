@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
-    public class LoginTest extends BaseTest {
-        @Test(priority = 1, description = "Тест проверяет правильный логин и пароль")
-        public void correctLogin() {
+public class LoginTest extends BaseTest {
+    @Test(priority = 1, description = "Тест проверяет правильный логин и пароль")
+    public void correctLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
 
@@ -17,8 +16,8 @@ import static org.testng.Assert.assertTrue;
         assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
     }
 
-        @DataProvider(name = "incorrectLoginDta")
-        public Object[][] loginData() {
+    @DataProvider(name = "incorrectLoginDta")
+    public Object[][] loginData() {
         return new Object[][]{
                 {"locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out."},
                 {"", "secret_sauce", "Epic sadface: Username is required"},
@@ -27,8 +26,8 @@ import static org.testng.Assert.assertTrue;
         };
     }
 
-        @Test(priority = 2, dataProvider = "incorrectLoginDta")
-        public void incorrectLogin(String user, String password, String errorMsg) {
+    @Test(priority = 2, dataProvider = "incorrectLoginDta")
+    public void incorrectLogin(String user, String password, String errorMsg) {
         loginPage.open();
         loginPage.login(user, password);
 
