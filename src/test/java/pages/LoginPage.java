@@ -39,7 +39,7 @@ public class LoginPage extends BasePage {
         driver.findElement(LoginInput).sendKeys(user);
     }
 
-    @Step("Вводим пароль {user}")
+    @Step("Вводим пароль {password}")
     public void fillPasswordField(String password) {
         driver.findElement(PasswordInput).sendKeys(password);
     }

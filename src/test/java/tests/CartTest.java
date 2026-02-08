@@ -31,4 +31,3 @@ public class CartTest extends BaseTest {
         assertTrue(cartPage.getProductsNames().contains(goodName));
     }
 }
-

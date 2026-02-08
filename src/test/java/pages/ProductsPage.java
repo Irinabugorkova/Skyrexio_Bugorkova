@@ -31,7 +31,6 @@ public class ProductsPage extends BasePage {
     @Step("Добавить товар в корзину по индексу: {goodIndex}")
     public void addGoodsToCart(int goodIndex) {
         driver.findElements(By.xpath("//*[text()= 'Add to cart']")).get(goodIndex).click();
-
     }
 
     @Step("Получить значение счётчика корзины")

@@ -23,7 +23,6 @@ public abstract class BasePage {
 
     @Step("Получить текст заголовка текущей страницы")
     public String checkTitleName() {
-
         return driver.findElement(title).getText();
     }
 }
